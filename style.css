@@ -1,8 +1,6 @@
 /* =====================================
    THE INTERVIEW
-   ===================================== */
-
-/* ---------- Reset ---------- */
+===================================== */
 
 *{
     margin:0;
@@ -10,361 +8,167 @@
     box-sizing:border-box;
 }
 
-html,body{
-
-    width:100%;
-    height:100%;
-
-    overflow:hidden;
-
+body{
     font-family:Arial,Helvetica,sans-serif;
-
-    background:#050505;
-    color:white;
-
+    background:#0b0b0b;
+    color:#eee;
+    overflow:hidden;
 }
-
-/* ---------- Utility ---------- */
 
 .hidden{
-
-    display:none !important;
-
+    display:none;
 }
 
-/* ---------- Background ---------- */
+/* Background */
 
 #background{
-
     position:fixed;
     inset:0;
-
     background:
-    radial-gradient(circle at center,#222 0%,#111 40%,#050505 100%);
-
+        radial-gradient(circle at center,#1a1a1a 0%,#050505 100%);
     z-index:-2;
-
 }
-
-/* ---------- Fade ---------- */
 
 #fade{
-
     position:fixed;
     inset:0;
-
-    background:black;
-
+    background:#000;
     opacity:0;
-
     pointer-events:none;
-
-    transition:.8s;
-
-    z-index:500;
-
+    transition:.6s;
+    z-index:100;
 }
 
-/* ---------- Screens ---------- */
+/* Screens */
 
 #titleScreen,
-#game,
+#gallery,
+#achievements,
+#game{
+    width:100vw;
+    height:100vh;
+}
+
+#titleScreen,
 #gallery,
 #achievements{
-
-    position:absolute;
-
-    inset:0;
-
-}
-
-/* ---------- Title ---------- */
-
-#titleScreen{
-
     display:flex;
-
     flex-direction:column;
-
     justify-content:center;
-
     align-items:center;
-
-    gap:20px;
-
+    gap:16px;
 }
 
-#title{
-
-    font-size:64px;
-
-    letter-spacing:8px;
-
+h1{
+    font-size:4rem;
+    letter-spacing:6px;
 }
 
 #subtitle{
-
     opacity:.7;
-
-    max-width:500px;
-
-    text-align:center;
-
 }
 
-/* ---------- Buttons ---------- */
-
 button{
-
-    padding:12px 24px;
-
-    border:1px solid #555;
-
-    background:#111;
-
+    background:#222;
     color:white;
-
+    border:1px solid #555;
+    padding:12px 28px;
     cursor:pointer;
-
-    transition:.25s;
-
+    transition:.2s;
 }
 
 button:hover{
-
-    background:#222;
-
-    border-color:#888;
-
+    background:#444;
 }
 
-/* ---------- Room ---------- */
+/* Interview Room */
 
 #room{
-
-    position:absolute;
-
-    inset:0;
-
+    height:60%;
+    position:relative;
 }
-
-/* Ceiling Light */
-
-#light{
-
-    position:absolute;
-
-    top:0;
-
-    left:50%;
-
-    transform:translateX(-50%);
-
-    width:260px;
-
-    height:120px;
-
-    background:rgba(255,255,220,.08);
-
-    filter:blur(40px);
-
-}
-
-/* Clock */
 
 #clock{
-
     position:absolute;
-
-    top:35px;
-
-    right:45px;
-
+    top:25px;
+    right:30px;
+    font-size:1.1rem;
+    opacity:.6;
 }
 
-/* Window */
+#light{
+    width:260px;
+    height:260px;
+    border-radius:50%;
+    background:rgba(255,255,220,.08);
+    position:absolute;
+    top:40px;
+    left:50%;
+    transform:translateX(-50%);
+    filter:blur(45px);
+}
+
+#window,
+#portrait,
+#recorder,
+#shadow{
+    position:absolute;
+}
 
 #window{
-
-    position:absolute;
-
-    top:80px;
-
-    left:70px;
-
-    width:180px;
-
-    height:120px;
-
-    border:2px solid #333;
-
-    background:#111;
-
+    width:140px;
+    height:180px;
+    border:2px solid #444;
+    left:80px;
+    top:70px;
 }
-
-/* Portrait */
 
 #portrait{
-
-    position:absolute;
-
-    top:230px;
-
-    left:85px;
-
-    width:110px;
-
-    height:150px;
-
-    border:2px solid #444;
-
-    background:#0d0d0d;
-
+    width:90px;
+    height:120px;
+    border:2px solid #555;
+    right:120px;
+    top:70px;
 }
-
-/* Recorder */
 
 #recorder{
-
-    position:absolute;
-
+    width:70px;
+    height:25px;
+    background:#222;
     left:50%;
-
-    bottom:255px;
-
+    bottom:40px;
     transform:translateX(-50%);
-
-    width:130px;
-
-    height:35px;
-
-    background:#151515;
-
 }
-
-/* Table */
-
-#table{
-
-    position:absolute;
-
-    left:50%;
-
-    bottom:180px;
-
-    transform:translateX(-50%);
-
-    width:520px;
-
-    height:26px;
-
-    background:#2a2a2a;
-
-}
-
-/* Chairs */
-
-#chairPlayer,
-#chairInterviewer{
-
-    position:absolute;
-
-    width:60px;
-
-    height:60px;
-
-    background:#1a1a1a;
-
-}
-
-#chairPlayer{
-
-    left:50%;
-
-    bottom:90px;
-
-    transform:translateX(-120px);
-
-}
-
-#chairInterviewer{
-
-    left:50%;
-
-    top:170px;
-
-    transform:translateX(-120px);
-
-}
-
-/* Shadow */
 
 #shadow{
-
-    position:absolute;
-
     inset:0;
-
     background:black;
-
     opacity:0;
-
-    transition:2s;
-
     pointer-events:none;
-
 }
 
-/* ---------- Dialogue ---------- */
+/* Dialogue */
 
 #dialogueBox{
-
-    position:absolute;
-
-    left:50%;
-
-    bottom:40px;
-
-    transform:translateX(-50%);
-
-    width:min(900px,90vw);
-
-    background:rgba(10,10,10,.92);
-
-    border:1px solid #333;
-
-    padding:24px;
-
+    height:40%;
+    padding:35px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
 }
 
 #speaker{
-
     margin-bottom:15px;
-
-    letter-spacing:2px;
-
 }
 
 #dialogue{
-
-    line-height:1.7;
-
+    font-size:1.15rem;
+    line-height:1.6;
+    min-height:90px;
 }
-
-/* ---------- Choices ---------- */
 
 #choices{
-
-    display:grid;
-
-    gap:12px;
-
-    margin-top:25px;
-
-}
-
-.choice{
-
-    width:100%;
-
+    display:flex;
+    flex-direction:column;
+    gap:10px;
 }
