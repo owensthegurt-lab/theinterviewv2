@@ -1,35 +1,21 @@
-// =====================================
-// THE INTERVIEW
-// ENDINGS
-// =====================================
-
 const ENDINGS = [
-
     {
         id: "good",
-
         title: "The Ideal Candidate",
-
-        description:
-            "The interviewer smiles for the first time. 'We'll be in touch.' As you leave, you realize nobody else is waiting outside."
+        description: "The interviewer smiles. The interview is over."
     },
 
     {
         id: "bad",
-
         title: "Rejected",
-
-        description:
-            "The file is closed. The lights go out. When they return, the room is empty except for your chair."
+        description: "The lights turn off. Nobody comes back."
     }
-
 ];
+
 
 function getEnding(player) {
 
-    const stats = player.stats;
-
-    if ((stats.empathy || 0) >= 3) {
+    if (player.stats.empathy >= 3) {
         return ENDINGS[0];
     }
 
