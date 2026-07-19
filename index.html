@@ -1,166 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>The Interview</title>
-
     <link rel="stylesheet" href="style.css">
-
 </head>
-
 <body>
 
-    <!-- Background -->
+<div id="background"></div>
+<div id="fade"></div>
 
-    <div id="background"></div>
+<section id="titleScreen">
+    <h1 id="title">THE INTERVIEW</h1>
+    <p id="subtitle">Some questions have no right answer.</p>
 
-    <!-- Fade Overlay -->
+    <button id="startBtn">Begin</button>
+    <button id="galleryBtn">Endings</button>
+    <button id="achievementBtn">Achievements</button>
+</section>
 
-    <div id="fade"></div>
+<main id="game" class="hidden">
 
-    <!-- ========================= -->
-    <!-- TITLE SCREEN -->
-    <!-- ========================= -->
-
-    <section id="titleScreen">
-
-        <h1 id="title">
-            THE INTERVIEW
-        </h1>
-
-        <p id="subtitle">
-            Some questions have no right answer.
-        </p>
-
-        <button id="startBtn">
-            Begin
-        </button>
-
-        <button id="galleryBtn">
-            Endings
-        </button>
-
-        <button id="achievementBtn">
-            Achievements
-        </button>
-
+    <section id="room">
+        <div id="light"></div>
+        <div id="clock">9:00 AM</div>
+        <div id="window"></div>
+        <div id="portrait"></div>
+        <div id="recorder"></div>
+        <div id="table"></div>
+        <div id="chairPlayer"></div>
+        <div id="chairInterviewer"></div>
+        <div id="shadow"></div>
     </section>
 
-    <!-- ========================= -->
-    <!-- GAME -->
-    <!-- ========================= -->
-
-    <main id="game" class="hidden">
-
-        <section id="room">
-
-            <div id="light"></div>
-
-            <div id="clock">
-                9:00 AM
-            </div>
-
-            <div id="window"></div>
-
-            <div id="portrait"></div>
-
-            <div id="recorder"></div>
-
-            <div id="table"></div>
-
-            <div id="chairPlayer"></div>
-
-            <div id="chairInterviewer"></div>
-
-            <div id="shadow"></div>
-
-        </section>
-
-        <section id="dialogueBox">
-
-            <h2 id="speaker">
-
-                Interviewer
-
-            </h2>
-
-            <p id="dialogue">
-
-                ...
-
-            </p>
-
-        </section>
-
-        <section id="choices">
-
-        </section>
-
-    </main>
-
-    <!-- ========================= -->
-    <!-- ENDING GALLERY -->
-    <!-- ========================= -->
-
-    <section id="gallery" class="hidden">
-
-        <h2>
-
-            Endings Found
-
-        </h2>
-
-        <div id="galleryList">
-
-        </div>
-
-        <button class="backBtn">
-
-            Back
-
-        </button>
-
+    <section id="dialogueBox">
+        <h2 id="speaker">Interviewer</h2>
+        <p id="dialogue">...</p>
+        <div id="choices"></div>
     </section>
 
-    <!-- ========================= -->
-    <!-- ACHIEVEMENTS -->
-    <!-- ========================= -->
+</main>
 
-    <section id="achievements" class="hidden">
+<section id="gallery" class="hidden">
+    <h2>Endings Found</h2>
+    <div id="galleryList"></div>
+    <button class="backBtn">Back</button>
+</section>
 
-        <h2>
+<section id="achievements" class="hidden">
+    <h2>Achievements</h2>
+    <div id="achievementList"></div>
+    <button class="backBtn">Back</button>
+</section>
 
-            Achievements
-
-        </h2>
-
-        <div id="achievementList">
-
-        </div>
-
-        <button class="backBtn">
-
-            Back
-
-        </button>
-
-    </section>
-
-    <!-- ========================= -->
-    <!-- JAVASCRIPT -->
-    <!-- ========================= -->
-
-    <script src="data.js"></script>
-    <script src="questions.js"></script>
-    <script src="endings.js"></script>
-    <script src="engine.js"></script>
-    <script src="game.js"></script>
+<script src="data.js"></script>
+<script src="questions.js"></script>
+<script src="endings.js"></script>
+<script src="ui.js"></script>
+<script src="engine.js"></script>
+<script src="game.js"></script>
 
 </body>
-
 </html>
